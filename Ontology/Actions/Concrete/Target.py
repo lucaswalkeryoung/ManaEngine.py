@@ -1,16 +1,16 @@
 # --------------------------------------------------------------------------------------------------
-# ------------------------ Ontology :: Actions :: Concrete :: Attach Action ------------------------
+# --------------------------- Ontology :: Actions :: Concrete :: Target ----------------------------
 # --------------------------------------------------------------------------------------------------
-from . Abstract import Abstract
+from . Concrete import Concrete
 
-from ... Bases.Axes import Axes
-from ... Bases.Meta import Meta
+from .... Bases.Node.Meta import Meta
+from .... Bases.Node.Axes import Axes
 
 
 # --------------------------------------------------------------------------------------------------
-# ------------------------------------ Action :: Attach Action -------------------------------------
+# --------------------------------------- Concrete :: Target ---------------------------------------
 # --------------------------------------------------------------------------------------------------
-class Attach(Abstract):
+class Target(Concrete):
 
     def __init__(self, meta: Meta, axes: Axes) -> None:
-        super().__init__(meta, axes | {'attach': True})
+        super().__init__(meta, {'target': True, **axes})

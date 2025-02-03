@@ -1,16 +1,16 @@
 # --------------------------------------------------------------------------------------------------
-# ----------------------------- Ontology :: Objects :: Counter Object ------------------------------
+# --------------------------------- Ontology :: Objects :: Counter ---------------------------------
 # --------------------------------------------------------------------------------------------------
-from Ontology.Bases.Meta import Meta
-from Ontology.Bases.Axes import Axes
+from . Object import Object
 
-from .  Object import Object
+from ... Bases.Node.Meta import Meta
+from ... Bases.Node.Axes import Axes
 
 
 # --------------------------------------------------------------------------------------------------
-# ------------------------------------ Class :: Counter Object -------------------------------------
+# --------------------------------------- Object :: Counter ----------------------------------------
 # --------------------------------------------------------------------------------------------------
 class Counter(Object):
 
     def __init__(self, meta: Meta, axes: Axes) -> None:
-        super().__init__(meta, meta, axes | {'counter': True})
+        super().__init__(meta, {'counter': True, **axes})

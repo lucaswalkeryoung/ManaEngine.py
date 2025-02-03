@@ -1,16 +1,16 @@
 # --------------------------------------------------------------------------------------------------
-# ---------------------------- Ontology :: Objects :: Permanent Object -----------------------------
+# -------------------------------- Ontology :: Objects :: Permanent --------------------------------
 # --------------------------------------------------------------------------------------------------
-from Ontology.Bases.Meta import Meta
-from Ontology.Bases.Axes import Axes
+from .. Bases.Meta import Meta
+from .. Bases.Axes import Axes
 
-from .  Object import Object
+from . Object import Object
 
 
 # --------------------------------------------------------------------------------------------------
-# ----------------------------------- Class :: Permanent Object ------------------------------------
+# -------------------------------------- Object :: Permanent ---------------------------------------
 # --------------------------------------------------------------------------------------------------
 class Permanent(Object):
 
     def __init__(self, meta: Meta, axes: Axes) -> None:
-        super().__init__(meta, meta, axes | {'permanent': True})
+        super().__init__(meta, {'permanent': True, **axes})

@@ -1,16 +1,16 @@
 # --------------------------------------------------------------------------------------------------
-# ------------------------ Ontology :: Actions :: Concrete :: Exile Action -------------------------
+# --------------------------- Ontology :: Actions :: Concrete :: Banish ----------------------------
 # --------------------------------------------------------------------------------------------------
-from Concrete import Concrete
+from . Concrete import Concrete
 
-from ... Bases.Axes import Axes
-from ... Bases.Meta import Meta
+from .... Bases.Node.Meta import Meta
+from .... Bases.Node.Axes import Axes
 
 
 # --------------------------------------------------------------------------------------------------
-# ------------------------------------- Action :: Exile Action -------------------------------------
+# --------------------------------------- Concrete :: Banish ---------------------------------------
 # --------------------------------------------------------------------------------------------------
-class Exile(Concrete):
+class Banish(Concrete):
 
     def __init__(self, meta: Meta, axes: Axes) -> None:
-        super().__init__(meta, axes | {'exile': True})
+        super().__init__(meta, {'banish': True, **axes})

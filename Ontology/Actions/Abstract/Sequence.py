@@ -1,16 +1,16 @@
 # --------------------------------------------------------------------------------------------------
-# ------------------------------ Ontology :: Objects :: Block Action -------------------------------
+# -------------------------- Ontology :: Actions :: Abstract :: Sequence ---------------------------
 # --------------------------------------------------------------------------------------------------
 from . Abstract import Abstract
 
-from .. Bases.Axes import Axes
-from .. Bases.Node import Node
+from .... Bases.Node.Meta import Meta
+from .... Bases.Node.Axes import Axes
 
 
 # --------------------------------------------------------------------------------------------------
-# ------------------------------------- Class :: Block Action --------------------------------------
+# -------------------------------------- Abstract :: Sequence --------------------------------------
 # --------------------------------------------------------------------------------------------------
-class Block(Abstract):
+class Sequence(Abstract):
 
     def __init__(self, meta: Meta, axes: Axes) -> None:
-        super().__init__(meta, meta, axes | {'block': True})
+        super().__init__(meta, {'sequence': True, **axes})

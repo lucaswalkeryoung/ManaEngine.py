@@ -1,15 +1,17 @@
 # --------------------------------------------------------------------------------------------------
-# ----------------------------- Ontology :: Objects :: Game Object ABC -----------------------------
+# --------------------------------- Ontology :: Objects :: Object ----------------------------------
 # --------------------------------------------------------------------------------------------------
-from Ontology.Bases.Meta import Meta
-from Ontology.Bases.Axes import Axes
-from Ontology.Bases.Node import Node
+from .. Bases.Node import Node
+from .. Bases.Meta import Meta
+from .. Bases.Axes import Axes
+
+from typing import Optional
 
 
 # --------------------------------------------------------------------------------------------------
-# ------------------------------------ Class :: Game Object ABC ------------------------------------
+# ----------------------------------------- Node :: Object -----------------------------------------
 # --------------------------------------------------------------------------------------------------
 class Object(Node):
 
     def __init__(self, meta: Meta, axes: Axes) -> None:
-        super().__init__(meta, meta, axes | {'object': True})
+        super().__init__(meta, {'object': True, **axes})
